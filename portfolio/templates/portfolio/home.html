@@ -1,0 +1,22 @@
+<center><h1>MY HOMEPAGE!!!</h1></center>
+
+<center>
+  {% load static %}
+  <img src="{% static 'portfolio/Debashis.jpg' %}" height="400">
+  <h2><a href="{% static 'portfolio\Environment.pdf' %}">Environment</a></h2>
+</center>
+
+
+{% for project in projects %}
+
+<h2>{{ project.title }}</h2><br>
+{{ project.description }}<br>
+<img src="{{ project.image.url }}">
+<br>
+{% if project.url %}
+<a href="{{ project.url }}">Link</a>
+<br>
+{% endif %}
+<br>
+<br>
+{% endfor %}
